@@ -1,0 +1,45 @@
+1)CREATE TABLE hotel(
+    Hotel_name VARCHAR(30),
+    Mobile_number BIGINT PRIMARY KEY,
+    Address VARCHAR(50),
+    Hotel_ratings DECIMAL(2, 1),
+    Variety VARCHAR(10),
+    Reviews INT
+);
+
+
+2)INSERT INTO hotel VALUES('Biryani by kilo', 9543456781, 'V.J.nagar', 4.2, 'Non-veg', 789);
+INSERT INTO hotel VALUES('Uttam sagar veg', 9320543210, 'Thudiyalur', 3.9, 'veg', 890);
+INSERT INTO hotel VALUES('Adyar Ananda Bhavan', 6346543209, 'Saravanampatti', 4.7, 'veg', 992);
+INSERT INTO hotel VALUES('Sri Udupi park', 9663334325, 'Koundampalayam', 4.4, 'Non-veg', 345);
+INSERT INTO hotel VALUES('Sikori', 8324654320, 'Ganapathypudur', 3.0, 'Non-veg', 901);
+INSERT INTO hotel VALUES('Green pepper', 9590789012, 'Gandhimanagar', 4.5, 'veg and non-veg', 765);
+INSERT INTO hotel VALUES('Fresh menu', 8154432198, 'Vkl nagar', 3.2, 'veg', 690);
+INSERT INTO hotel VALUES('Eat fit', 9102704325, 'Race course', 4.8, 'Non-veg', 432);
+INSERT INTO hotel VALUES('Udupi Vaibhav', 6127734251, 'Saravanampatti', 3.5, 'Non-veg', 823);
+INSERT INTO hotel VALUES('Malabar Hotel', 7658765431, 'Thudiyalur', 4.1, 'veg and non-veg', 546);
+
+
+3)SELECT Hotel_name
+FROM hotel;
+
+
+4)SELECT Hotel_name
+FROM hotel
+ORDER BY Hotel_ratings DESC;
+
+
+5)SELECT Hotel_name
+FROM hotel
+WHERE Variety = 'veg';
+
+
+6)CREATE TABLE Hotelname(
+    menu VARCHAR(30),
+    price INT,
+    Rating INT,
+    Menu_Reviews INT,
+    Mobile_number BIGINT,
+    FOREIGN KEY(Mobile_number)
+    REFERENCES hotel(Mobile_number)
+);
